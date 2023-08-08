@@ -22,9 +22,18 @@ To run the container and set the environment variable, use the following command
 
 Replace "Your custom message" with the desired echo message you want the server to echo. For example
 
-# √ docker run -p 8080:8080 -e ECHO_MESSAGE=“production” echo-server-image
+# √ docker run -p 8080:8080 -e ECHO_MESSAGE=“production” echo-server-image  # TESTING THE IMAGE LOCALLY
 
 The container will now run the echo server application, and the specified message will be echoed when you access http://localhost:8080/echo.
+
+Pushing the container to ECR:
+
+Run the following commands to tag the image and push the image to ECR
+
+# √ docker tag tomagembo-echo-server:latest public.ecr.aws/z8r9g7l9/tomagembo-echo-server:latest
+
+# √ docker push public.ecr.aws/z8r9g7l9/tomagembo/echo-server-image:latest
+
 
 3. Helm
 
@@ -47,3 +56,6 @@ Run
 within the root directory of the AWS EKS cluster along with the echo server Helm deployment.
 
 The kubeconfig output will give you the configuration to connect to the EKS cluster, and the echo_server_url output will give you the URL to access the echo server LoadBalancer.
+
+
+The config files to access the cluster using kubectl are in ./config file
