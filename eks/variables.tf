@@ -4,7 +4,7 @@
 
 variable "cluster_name" {
   description = "The name of the EKS cluster."
-  default     = "Tom-echo-server-cluster"  
+  default     = "Tom-Agembo-echo-server"  
 }
 
 variable "region" {
@@ -25,6 +25,11 @@ variable "public_subnet_ids" {
 variable "vpc_id" {
   description = "The CIDR block for the VPC."
   default     = "vpc-0e2192b3a12f1487a"
+}
+
+variable "node_instance_type" {
+  description = "EC2 instance type for the EKS nodes"
+  default = ["t3.medium"]
 }
 
 variable "echo_message" {

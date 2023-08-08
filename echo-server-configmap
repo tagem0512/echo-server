@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: echo-server-configmap
+data:
+  index.html: |
+    <!-- Your HTML content here -->
