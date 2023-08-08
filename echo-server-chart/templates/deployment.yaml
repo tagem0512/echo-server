@@ -1,0 +1,40 @@
+#################
+## √ @Tom
+#################
+
+
+# templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: public.ecr.aws/d7w2y7v8/echo-server:latest # the echo server docker image
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ECHO_MESSAGE
+              value: {{ .Values.echoMessage }}
+            # Add other environment variables as needed
+          volumeMounts:
+            - name: index-html
+              mountPath: /app/index.html
+              subPath: index.html
+      volumes:
+        - name: index-html
+          configMap:
+            name: {{ .Chart.Name }}-configmap
+            items:
+              - key: index.html
+                path: index.html

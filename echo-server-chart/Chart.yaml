@@ -1,0 +1,9 @@
+#################
+## √ @Tom
+#################
+
+# Chart.yaml
+apiVersion: v2
+name: echo-server
+version: 1.0.0
+description: A basic Helm chart for deploying the echo server application

@@ -1,0 +1,17 @@
+#################
+## √ @Tom
+#################
+
+# templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-service
+spec:
+  selector:
+    app: {{ .Chart.Name }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
