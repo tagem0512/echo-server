@@ -1,5 +1,5 @@
 #################
-## √ @Tom
+## √ @devopsengineersam
 #################
 
 variable "cluster_name" {
@@ -34,12 +34,12 @@ variable "node_instance_type" {
 
 variable "echo_message" {
   description = "The message that the echo server will echo."
-  default     = "Hello Perimeter81"
+  default     = "Hello Sam"
 }
 
 variable "owner" {
   description = "Owner tag value."
-  default =   "Nati"
+  default =   "devopsengineersam"
 }
 
 variable "department" {

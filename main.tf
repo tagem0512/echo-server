@@ -1,5 +1,5 @@
 #################
-## √ @Tom
+## √ @devopsengineersam
 #################
 
 module "eks_cluster" {

@@ -1,5 +1,5 @@
 #################
-## √ @Tom
+## √ @devopsengineersam
 #################
 
 provider "aws" {
@@ -19,7 +19,7 @@ module "eks" {
   vpc_id          = var.vpc_id  # Use the variable to receive the existing VPC ID
 
   tags = {
-    Name       = "Tom-Agembo EKS Cluster"
+    Name       = "echo-server-Cluster"
     Owner      = var.owner
     Department = var.department
     Temp       = var.temp
@@ -42,7 +42,7 @@ resource "aws_eks_node_group" "main" {
     max_size     = 2
   }
   tags = {
-    Name       = "Tom-Agembo Node"
+    Name       = "echo-server-Node"
     Owner      = var.owner
     Department = var.department
     Temp       = var.temp
@@ -53,7 +53,7 @@ resource "aws_eks_node_group" "main" {
 resource "aws_iam_role" "eks_node_group" {
   name = "eks-node-group-role"
   tags = {
-    Name       = "Tom-Agembo Role"
+    Name       = "echo-server-Role"
     Owner      = var.owner
     Department = var.department
     Temp       = var.temp

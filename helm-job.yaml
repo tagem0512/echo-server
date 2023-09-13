@@ -1,3 +1,7 @@
+#################
+## √ @devopsengineersam
+#################
+
 # √ This file will define a Kubernetes Job to execute the helm command on a pod within the EKS cluster.
 apiVersion: batch/v1
 kind: Job
@@ -13,6 +17,6 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
           - |
-            helm upgrade --install echo-server ./echo_server_chart
+            helm upgrade --install echo-server ./echo-server-chart
       # imagePullSecrets:
       # - name: my-registry-credentials  # Replace with the name of your image pull secret if needed
